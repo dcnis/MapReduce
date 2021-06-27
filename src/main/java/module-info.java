@@ -1,0 +1,3 @@
+module de.schmidtdennis.MapReduce {
+
+}
