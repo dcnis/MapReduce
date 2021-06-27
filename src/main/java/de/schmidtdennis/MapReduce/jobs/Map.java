@@ -1,8 +1,9 @@
 package de.schmidtdennis.MapReduce.jobs;
 
-import java.io.File;
 import java.io.IOException;
-import java.util.Scanner;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class Map {
 
@@ -10,10 +11,9 @@ public class Map {
 
     public void map(String host) throws IOException {
 
-        File file = new File("src/main/java/de/schmidtdennis/MapReduce/" + host + "/latencies.txt");
-        Scanner scanner = new Scanner(file);
-        while(scanner.hasNextLine()){
-            String latency = scanner.nextLine();
+        Path file = Paths.get("src/main/java/de/schmidtdennis/MapReduce/" + host + "/latencies.txt");
+
+        for(String latency : Files.readAllLines(file)){
             if(Integer.parseInt(latency) < 1000){
                 mapReduce.emitMapResult(host, "under_1_second", "1");
             } else {
