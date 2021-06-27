@@ -1,2 +1,2 @@
 # MapReduce
-A simple Java Program implementing MapReduce for large distributed processing
+A simple Java Program to show how MapReduce works for large distributed processing
