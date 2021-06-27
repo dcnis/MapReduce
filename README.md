@@ -46,5 +46,12 @@ Simple pull the code and run the Main function.
 Run Main.main()
 ```
 
+## Requirements
+
+The requirements for this project are the followings:
+
+- Java 11
+- Maven
+
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
